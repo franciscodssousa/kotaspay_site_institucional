@@ -1,6 +1,12 @@
 #!/bin/sh
 set -e
 
+# Garante que DJANGO_SETTINGS_MODULE esteja definido para todos os comandos
+# deste script (migrate, criação de superusuário, collectstatic e gunicorn).
+# O valor padrão (homologacao) pode ser sobrescrito via variável de ambiente
+# do provedor de hospedagem (ex: Railway, Render).
+export DJANGO_SETTINGS_MODULE="${DJANGO_SETTINGS_MODULE:-config.settings.homologacao}"
+
 # Aguarda o banco de dados ficar disponível antes de prosseguir.
 # Funciona tanto com DATABASE_URL (provedores de hospedagem) quanto com
 # variáveis individuais POSTGRES_HOST/POSTGRES_PORT. Se o banco for SQLite
