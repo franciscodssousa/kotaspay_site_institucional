@@ -18,7 +18,13 @@ import environ
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 env = environ.Env(DEBUG=(bool, False))
-environ.Env.read_env(BASE_DIR / ".env")
+
+# Em ambientes containerizados (Railway, Render, etc.) o arquivo .env não é
+# copiado para a imagem (.dockerignore); as variáveis vêm do ambiente do
+# provedor. Portanto, só tentamos ler .env se ele existir.
+_env_file = BASE_DIR / ".env"
+if _env_file.exists():
+    environ.Env.read_env(_env_file)
 
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
@@ -69,8 +75,35 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
+def _montar_url_banco() -> str:
+    """
+    Resolve a URL de conexão com o banco de dados.
+
+    Ordem de precedência:
+      1. DATABASE_URL — URL completa (ex: postgres://user:senha@host:5432/db).
+         Preferida em provedores de hospedagem (Railway, Render, etc.).
+      2. Variáveis individuais POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DB,
+         POSTGRES_USER, POSTGRES_PASSWORD — usadas quando o banco roda em
+         outro container/host (ex: Portainer, serviço gerenciado).
+      3. SQLite local — fallback para desenvolvimento rápido.
+    """
+    database_url = env("DATABASE_URL", default=None)
+    if database_url:
+        return database_url
+
+    postgres_host = env("POSTGRES_HOST", default=None)
+    if postgres_host:
+        usuario = env("POSTGRES_USER", default="postgres")
+        senha = env("POSTGRES_PASSWORD", default="")
+        porta = env.int("POSTGRES_PORT", default=5432)
+        banco = env("POSTGRES_DB", default="postgres")
+        return f"postgres://{usuario}:{senha}@{postgres_host}:{porta}/{banco}"
+
+    return f"sqlite:///{BASE_DIR / 'db.sqlite3'}"
+
+
 DATABASES = {
-    "default": env.db("DATABASE_URL", default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}"),
+    "default": env.db("DATABASE_URL", default=_montar_url_banco()),
 }
 
 AUTH_PASSWORD_VALIDATORS = [
