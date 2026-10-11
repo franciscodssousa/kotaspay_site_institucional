@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block estilos_extras %}
+<link rel="stylesheet" href="{% static 'css/documentos_legais.css' %}">
+{% endblock %}
+
+{% block conteudo %}
+<section class="secao-documento-legal">
+  <div class="container">
+    <div class="secao-cabecalho">
+      <span class="tag-secao tag-secao--solucao">Documentos legais</span>
+      <h1 class="secao-titulo">{% block titulo_do_documento %}{% endblock %}</h1>
+      <p class="secao-subtitulo">{% block resumo_do_documento %}{% endblock %}</p>
+    </div>
+
+    <div class="documento-legal">
+      <nav class="documento-legal__navegacao" aria-label="Documentos legais">
+        <a href="{% url 'nucleo:politica_de_privacidade' %}">Política de Privacidade</a>
+        <a href="{% url 'nucleo:termos_de_uso' %}">Termos de Uso</a>
+        <a href="{% url 'nucleo:lgpd' %}">LGPD e proteção de dados</a>
+      </nav>
+
+      <p class="documento-legal__atualizacao">
+        Última atualização: {% include "nucleo/dado_da_empresa.html" with valor=empresa.data_de_atualizacao rotulo="DATA DA ÚLTIMA ATUALIZAÇÃO" %}
+      </p>
+
+      <div class="documento-legal__corpo">
+        {% block corpo_do_documento %}{% endblock %}
+      </div>
+
+      <p class="documento-legal__voltar">
+        <a href="{% url 'nucleo:inicio' %}">&larr; Voltar para a home</a>
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}

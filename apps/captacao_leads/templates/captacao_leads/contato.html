@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}Fale com a KotasPay — Demonstração e Contato Comercial{% endblock %}
+
+{% block conteudo %}
+<section class="secao-contato" style="padding: 4.5rem 0;">
+  <div class="container">
+    <div class="card-conversao">
+      <div class="card-conversao__header">
+        <span class="tag-secao tag-secao--solucao">Fale com Nossos Especialistas</span>
+        <h1 class="card-conversao__titulo">Fale com a equipe KotasPay</h1>
+        <p class="card-conversao__subtitulo">
+          Conte um pouco sobre sua associação ou cooperativa. Nossa equipe entrará em contato para apresentar uma proposta sob medida e agendar uma demonstração.
+        </p>
+      </div>
+
+      {% if messages %}
+        <div class="mensagens-container">
+          {% for mensagem in messages %}
+            <div class="alerta alerta--{{ mensagem.tags }}">{{ mensagem }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <form method="post" class="form-conversao">
+        {% csrf_token %}
+
+        <div class="form-conversao__grid">
+          <!-- Coluna 1: Dados Pessoais & Contato -->
+          <div class="form-conversao__coluna">
+            <div class="campo-grupo">
+              <label for="{{ form.nome_completo.id_for_label }}" class="campo-label">Nome completo *</label>
+              <input type="text" name="nome_completo" id="{{ form.nome_completo.id_for_label }}" class="campo-input" placeholder="Ex: Carlos Eduardo" value="{{ form.nome_completo.value|default:'' }}" required maxlength="200">
+              {{ form.nome_completo.errors }}
+            </div>
+
+            <div class="campo-grupo">
+              <label for="{{ form.email.id_for_label }}" class="campo-label">E-mail corporativo ou institucional *</label>
+              <input type="email" name="email" id="{{ form.email.id_for_label }}" class="campo-input" placeholder="seuemail@organizacao.com.br" value="{{ form.email.value|default:'' }}" required>
+              {{ form.email.errors }}
+            </div>
+
+            <div class="campo-grupo">
+              <label for="{{ form.whatsapp.id_for_label }}" class="campo-label">WhatsApp com DDD *</label>
+              <input type="tel" name="whatsapp" id="{{ form.whatsapp.id_for_label }}" class="campo-input" placeholder="(00) 00000-0000" value="{{ form.whatsapp.value|default:'' }}" required maxlength="20">
+              {{ form.whatsapp.errors }}
+            </div>
+          </div>
+
+          <!-- Coluna 2: Dados da Organização -->
+          <div class="form-conversao__coluna">
+            <div class="campo-grupo">
+              <label for="{{ form.nome_da_organizacao.id_for_label }}" class="campo-label">Nome da organização *</label>
+              <input type="text" name="nome_da_organizacao" id="{{ form.nome_da_organizacao.id_for_label }}" class="campo-input" placeholder="Ex: Associação Parque das Flores" value="{{ form.nome_da_organizacao.value|default:'' }}" required maxlength="200">
+              {{ form.nome_da_organizacao.errors }}
+            </div>
+
+            <div class="campo-grupo-duplo">
+              <div class="campo-grupo">
+                <label for="{{ form.tipo_de_organizacao.id_for_label }}" class="campo-label">Tipo de organização *</label>
+                <select name="tipo_de_organizacao" id="{{ form.tipo_de_organizacao.id_for_label }}" class="campo-select" required>
+                  {% for val, rotulo in form.fields.tipo_de_organizacao.choices %}
+                    <option value="{{ val }}" {% if form.tipo_de_organizacao.value == val %}selected{% endif %}>{{ rotulo }}</option>
+                  {% endfor %}
+                </select>
+                {{ form.tipo_de_organizacao.errors }}
+              </div>
+
+              <div class="campo-grupo">
+                <label for="{{ form.faixa_de_associados.id_for_label }}" class="campo-label">Nº de associados/cooperados *</label>
+                <select name="faixa_de_associados" id="{{ form.faixa_de_associados.id_for_label }}" class="campo-select" required>
+                  {% for val, rotulo in form.fields.faixa_de_associados.choices %}
+                    <option value="{{ val }}" {% if form.faixa_de_associados.value == val %}selected{% endif %}>{{ rotulo }}</option>
+                  {% endfor %}
+                </select>
+                {{ form.faixa_de_associados.errors }}
+              </div>
+            </div>
+
+            <div class="campo-grupo">
+              <label for="{{ form.objetivo_do_contato.id_for_label }}" class="campo-label">Objetivo do contato *</label>
+              <select name="objetivo_do_contato" id="{{ form.objetivo_do_contato.id_for_label }}" class="campo-select" required>
+                {% for val, rotulo in form.fields.objetivo_do_contato.choices %}
+                  <option value="{{ val }}" {% if form.objetivo_do_contato.value == val %}selected{% endif %}>{{ rotulo }}</option>
+                {% endfor %}
+              </select>
+              {{ form.objetivo_do_contato.errors }}
+            </div>
+          </div>
+        </div>
+
+        <div class="campo-grupo campo-grupo--full">
+          <label for="{{ form.mensagem.id_for_label }}" class="campo-label">Como podemos ajudar sua organização hoje? (Opcional)</label>
+          <textarea name="mensagem" id="{{ form.mensagem.id_for_label }}" class="campo-textarea" rows="4" placeholder="Conte um pouco sobre suas necessidades atuais de cobrança ou gestão...">{{ form.mensagem.value|default:'' }}</textarea>
+          {{ form.mensagem.errors }}
+        </div>
+
+        <div class="campo-grupo campo-grupo--aceite">
+          <label class="campo-checkbox" for="{{ form.aceite_da_politica.id_for_label }}">
+            <input type="checkbox" name="aceite_da_politica" id="{{ form.aceite_da_politica.id_for_label }}" required>
+            <span>Li e concordo com a <a href="{% url 'nucleo:politica_de_privacidade' %}" target="_blank" rel="noopener" class="campo-checkbox__link">Política de Privacidade <svg class="campo-checkbox__icone" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg><span class="sr-apenas"> (abre em nova aba)</span></a>.</span>
+          </label>
+          {{ form.aceite_da_politica.errors }}
+        </div>
+
+        <div class="form-conversao__rodape">
+          <button type="submit" class="botao botao--primario botao--full botao--lg">
+            Enviar solicitação para a KotasPay
+            <svg class="icone-seta" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+          <p class="form-privacidade-nota">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Seus dados estão protegidos conforme as diretrizes da LGPD.
+          </p>
+        </div>
+      </form>
+            <p style="margin: 0; margin-top: 1rem;"><a href="{% url 'nucleo:inicio' %}"
+          style="color: var(--kp-verde-esmeralda); font-weight: 600; text-decoration: underline;">&larr; Voltar para a
+          home</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %}

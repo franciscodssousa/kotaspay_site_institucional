@@ -1,0 +1,148 @@
+{% extends "nucleo/documento_legal_base.html" %}
+
+{% block titulo %}Política de Privacidade — KotasPay{% endblock %}
+{% block meta_descricao %}Saiba como a KotasPay trata os dados pessoais de quem visita o site institucional e entra em contato com a nossa equipe.{% endblock %}
+{% block titulo_do_documento %}Política de Privacidade{% endblock %}
+{% block resumo_do_documento %}Como a KotasPay trata os dados de quem visita este site e fala com a nossa equipe.{% endblock %}
+
+{% block corpo_do_documento %}
+{# RASCUNHO para revisão jurídica. Os trechos em <mark> são pendências a preencher ou validar. #}
+
+<p>
+  Esta Política explica como a KotasPay trata dados pessoais neste site institucional, em conformidade com a
+  Lei Geral de Proteção de Dados (Lei nº 13.709/2018, a "LGPD").
+</p>
+
+<h2>1. Quem é o responsável pelos dados</h2>
+<p>
+  O responsável (controlador) pelos dados coletados neste site é
+  {% include "nucleo/dado_da_empresa.html" with valor=empresa.razao_social rotulo="RAZÃO SOCIAL" %}, CNPJ
+  {% include "nucleo/dado_da_empresa.html" with valor=empresa.cnpj rotulo="CNPJ" %}, com sede em
+  {% include "nucleo/dado_da_empresa.html" with valor=empresa.endereco rotulo="ENDEREÇO COMPLETO" %} ("KotasPay").
+</p>
+
+<h2>2. A que se aplica esta Política</h2>
+<p>
+  Esta Política vale somente para o <strong>site institucional</strong>. A plataforma de gestão financeira da
+  KotasPay, usada por associações, cooperativas e seus associados, é um ambiente separado, com política de
+  privacidade e termos próprios.
+</p>
+
+<h2>3. Quais dados coletamos</h2>
+<h3>Dados que você informa no formulário de contato</h3>
+<ul>
+  <li>nome completo;</li>
+  <li>e-mail corporativo ou institucional;</li>
+  <li>número de WhatsApp com DDD;</li>
+  <li>nome e tipo da organização (associação de moradores, cooperativa, associação profissional ou outra);</li>
+  <li>faixa aproximada de associados ou cooperados;</li>
+  <li>objetivo do contato e, se você quiser, uma mensagem.</li>
+</ul>
+<p>
+  Também registramos a data e a hora em que você aceitou esta Política ao enviar o formulário.
+</p>
+
+<h3>Dados técnicos</h3>
+<p>
+  Ao acessar o site, o servidor pode registrar dados técnicos como endereço IP, tipo de navegador, páginas
+  acessadas e data e hora do acesso, para fins de segurança e funcionamento.
+  
+</p>
+<p>Este site não coleta dados financeiros, bancários ou dados pessoais sensíveis.</p>
+
+<h2>4. Para que usamos os dados e em que base legal</h2>
+<ul>
+  <li>
+    <strong>Responder ao seu contato, apresentar proposta e agendar demonstração.</strong>
+    Base legal:Procedimentos preliminares de contrato (art. 7º, V)
+    <mark class="documento-legal__pendente">[DEFINIR COM O JURÍDICO: consentimento ou procedimentos preliminares relacionados a contrato]</mark>.
+  </li>
+  <li>
+    <strong>Entender o perfil da sua organização (tipo e porte) para preparar uma proposta adequada.</strong>
+    Base legal: Procedimentos preliminares de contrato (art. 7º, V) <mark class="documento-legal__pendente">[DEFINIR COM O JURÍDICO]</mark>.
+  </li>
+  <li>
+    <strong>Manter a segurança do site e prevenir fraudes e abusos.</strong>
+    Base legal: Legítimo interesse (art. 7º, IX)
+  </li>
+</ul>
+<p>Não vendemos seus dados e não os usamos para finalidades diferentes das descritas aqui.</p>
+
+<h2>5. Com quem compartilhamos</h2>
+<p>O compartilhamento é limitado ao necessário:</p>
+<ul>
+  <li>
+    <strong>Equipe comercial da KotasPay:</strong> cada contato enviado pelo formulário é encaminhado por e-mail
+    à nossa equipe comercial.
+  </li>
+  <li>
+    <strong>Prestadores de serviço:</strong>Serviço de email GMAIL da empresa Google para recebimento pela equipe de vendas da KotasPay
+
+
+  </li>
+  <li>
+    <strong>Google Fonts:</strong> as fontes de texto do site são carregadas dos servidores do Google, o que
+    envia seu endereço IP e dados do navegador ao Google no momento do acesso.
+  </li>
+  <li>
+    <strong>Autoridades:</strong> quando houver obrigação legal ou ordem de autoridade competente.
+  </li>
+</ul>
+<p>
+  Alguns desses prestadores podem armazenar dados fora do Brasil. Nesses casos, adotamos as salvaguardas
+  exigidas pela LGPD.
+
+</p>
+
+<h2>6. Por quanto tempo guardamos os dados</h2>
+<p>
+  Guardamos os dados do formulário pelo tempo necessário para atender ao seu contato e conduzir a negociação.
+  Se não houver contratação, eliminamos ou anonimizamos os dados em até
+  {% include "nucleo/dado_da_empresa.html" with valor=empresa.prazo_de_retencao rotulo="PRAZO DE RETENÇÃO" %}, salvo se a lei exigir guarda por
+  mais tempo.
+</p>
+
+<h2>7. Seus direitos</h2>
+<p>Você pode solicitar, a qualquer momento:</p>
+<ul>
+  <li>confirmação de que tratamos seus dados e acesso a eles;</li>
+  <li>correção de dados incompletos, inexatos ou desatualizados;</li>
+  <li>anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desacordo com a lei;</li>
+  <li>portabilidade dos dados, nos termos da regulamentação;</li>
+  <li>informação sobre as entidades com as quais compartilhamos seus dados;</li>
+  <li>revogação do consentimento, quando essa for a base legal;</li>
+  <li>oposição a tratamento feito sem consentimento, em caso de descumprimento da lei.</li>
+</ul>
+<p>
+  Para exercer esses direitos, escreva para
+  {% include "nucleo/email_da_empresa.html" with valor=empresa.email_do_encarregado rotulo="E-MAIL DO ENCARREGADO" %}. Veja também a página
+  <a href="{% url 'nucleo:lgpd' %}">LGPD e proteção de dados</a>.
+</p>
+
+<h2>8. Segurança</h2>
+<p>
+  Adotamos medidas técnicas e administrativas para proteger os dados contra acessos não autorizados, perdas e
+  usos indevidos, como conexão HTTPS,certificados SSL,acesso restrito ao painel administrativo, backups e controle de acesso aos dados.
+  Se ocorrer um incidente de segurança que possa gerar risco ou dano relevante, comunicaremos a Autoridade
+  Nacional de Proteção de Dados (ANPD) e os titulares afetados, conforme a lei.
+</p>
+
+<h2>9. Cookies</h2>
+<p>
+  Este site usa cookies técnicos necessários ao seu funcionamento, como o cookie de proteção contra
+  falsificação de requisições (CSRF), que garante a segurança do envio do formulário.
+  
+</p>
+
+<h2>10. Encarregado pelo tratamento de dados (DPO)</h2>
+<p>
+  Nome: {% include "nucleo/dado_da_empresa.html" with valor=empresa.nome_do_encarregado rotulo="NOME DO ENCARREGADO" %}<br>
+  E-mail: {% include "nucleo/email_da_empresa.html" with valor=empresa.email_do_encarregado rotulo="E-MAIL DO ENCARREGADO" %}
+</p>
+
+<h2>11. Alterações nesta Política</h2>
+<p>
+  Podemos atualizar esta Política. A data da última atualização aparece no topo da página e, em mudanças
+  relevantes, avisaremos pelo próprio site.
+</p>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}Solução KotasPay — Gestão Financeira, Recebíveis e Transparência{% endblock %}
+
+{% block conteudo %}
+<section class="secao-solucao" style="padding: 4.5rem 0;">
+  <div class="container">
+    <div class="secao-cabecalho">
+      <span class="tag-secao tag-secao--solucao">Nossa Solução</span>
+      <h1 class="secao-titulo">Uma plataforma digital completa para a gestão de recebíveis</h1>
+      <p class="secao-subtitulo">
+        Desenvolvida para simplificar a administração financeira de associações e cooperativas com automação, controle e transparência de ponta a ponta.
+      </p>
+    </div>
+
+    <div class="grid-cards-solucao" style="margin-bottom: 4rem;">
+      <div class="card-solucao">
+        <div class="card-solucao__topo">
+          <div class="card-solucao__icone">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+          </div>
+          <span class="card-solucao__badge">Cobrança</span>
+        </div>
+        <h3 class="card-solucao__titulo">Gestão de Recebíveis e Automação</h3>
+        <p class="card-solucao__texto">
+          Automatize a emissão de mensalidades e contribuições recorrentes via Pix e boleto bancário, com liquidação rápida e conciliação em tempo real.
+        </p>
+      </div>
+
+      <div class="card-solucao">
+        <div class="card-solucao__topo">
+          <div class="card-solucao__icone">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          </div>
+          <span class="card-solucao__badge">Controle</span>
+        </div>
+        <h3 class="card-solucao__titulo">Controle da Inadimplência</h3>
+        <p class="card-solucao__texto">
+          Acompanhe pendências por associado, envie notificações amigáveis preventivas e tenha um histórico transparente para decisões seguras.
+        </p>
+      </div>
+
+      <div class="card-solucao">
+        <div class="card-solucao__topo">
+          <div class="card-solucao__icone">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <span class="card-solucao__badge">Previsibilidade</span>
+        </div>
+        <h3 class="card-solucao__titulo">Visão de Receitas e Relatórios</h3>
+        <p class="card-solucao__texto">
+          Visualize receitas previstas, recebidas e pendentes em dashboards gerenciais claros para suporte imediato às assembleias e conselhos fiscais.
+        </p>
+      </div>
+    </div>
+
+    <!-- Banner de Ação / CTA -->
+    <div class="card-inteligencia" style="text-align: center;">
+      <h2 style="color: #fff; margin-bottom: 1rem; font-size: 2rem;">Pronto para transformar sua gestão financeira?</h2>
+      <p style="color: rgba(255,255,255,0.85); max-width: 650px; margin: 0 auto 2rem auto; font-size: 1.1rem;">
+        Agende uma conversa com nossos especialistas e veja na prática como a KotasPay pode apoiar sua entidade.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="{% url 'captacao_leads:contato' %}" class="botao botao--primario botao--lg">Falar com a KotasPay</a>
+        <a href="{% url 'nucleo:inicio' %}#hero" class="botao botao--outline botao--lg" style="color: #fff; border-color: rgba(255,255,255,0.3);">Voltar para a página inicial</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

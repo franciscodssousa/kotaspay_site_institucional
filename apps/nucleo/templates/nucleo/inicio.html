@@ -1,0 +1,909 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}KotasPay — Gestão financeira simples. Receitas previsíveis para sua organização.{% endblock %}
+
+{% block conteudo %}
+<!-- =========================================================================
+     1. SEÇÃO HERO
+     ========================================================================= -->
+<section class="hero" id="hero">
+  <div class="hero__inner">
+
+    <!-- Logo grande com fundo transparente -->
+    <div class="hero__logo-bloco">
+      <img src="{% static 'img/logo_kotaspay_2k_transparente.png' %}" alt="KotasPay — Juntos, Mais Conquistas"
+        class="hero__logo-hero" loading="eager">
+    </div>
+
+    <!-- Conteúdo abaixo de "JUNTOS, MAIS CONQUISTAS" -->
+    <div class="hero__conteudo">
+      <p class="hero__descricao">
+        A plataforma digital completa para gestão de recebíveis, controle de inadimplência e transparência em
+        associações e cooperativas.
+      </p>
+
+      <p class="hero__proposta-valor">
+        <strong>Mais controle</strong> para gestores. <strong>Mais transparência</strong> para associados e cooperados.
+        <strong>Mais resultados</strong> com previsibilidade financeira.
+      </p>
+
+      <div class="hero__acoes">
+        <a href="#solucao" class="botao botao--primario botao--lg">
+          Quero conhecer a KotasPay
+          <svg class="icone-seta" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="#contato" class="botao botao--outline botao--lg">
+          Fale com nossa equipe
+        </a>
+      </div>
+
+      <div class="hero__garantias">
+        <div class="garantia-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Implantação simplificada</span>
+        </div>
+        <div class="garantia-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Gestão centralizada</span>
+        </div>
+        <div class="garantia-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Relatórios gerenciais</span>
+        </div>
+        <div class="garantia-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Transparência financeira</span>
+        </div>
+        <div class="garantia-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Conformidade com a LGPD</span>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================================
+     2. SEÇÃO O PROBLEMA VS. A SOLUÇÃO
+     ========================================================================= -->
+<section class="secao-problemas-solucoes" id="solucao">
+  <!-- 2.1 O Problema -->
+  <div class="bloco-problema">
+    <div class="container">
+      <div class="secao-cabecalho">
+        <span class="tag-secao tag-secao--alerta">O Desafio Atual</span>
+        <h2 class="secao-titulo">Administrar uma organização coletiva não deveria ser uma tarefa financeira complexa
+        </h2>
+        <p class="secao-subtitulo">
+          Os desafios manuais e descentralizados travam o crescimento de associações e cooperativas:
+        </p>
+      </div>
+
+      <div class="grid-cards-problema">
+        <!-- Card 1 -->
+        <div class="card-problema">
+          <div class="card-problema__icone">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </div>
+          <h3 class="card-problema__titulo">Inadimplência sem controle e sem histórico</h3>
+          <p class="card-problema__texto">
+            Dificuldade contínua para acompanhar pagamentos em atraso, sem lembretes automáticos amigáveis e com perda
+            de
+            dados históricos importantes.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-problema">
+          <div class="card-problema__icone">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h3 class="card-problema__titulo">Planilhas dispersas e falhas de conciliação</h3>
+          <p class="card-problema__texto">
+            Informações descentralizadas em planilhas que geram divergências manuais, tomam horas de trabalho e elevam o
+            risco de erros financeiros.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-problema">
+          <div class="card-problema__icone">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <h3 class="card-problema__titulo">Prestação de contas complexa e atrito</h3>
+          <p class="card-problema__texto">
+            Dificuldade de prever receitas e assembleias exaustivas pela falta de clareza e de canais modernos de
+            prestação de contas aos membros.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2.2 A Solução KotasPay -->
+  <div class="bloco-solucao">
+    <div class="container">
+      <div class="secao-cabecalho">
+        <span class="tag-secao tag-secao--solucao">A Solução KotasPay</span>
+        <h2 class="secao-titulo">Uma nova forma de gerir recebíveis com inteligência financeira</h2>
+        <p class="secao-subtitulo">
+          Integramos cobrança, controle da inadimplência, previsão de receitas e transparência em um só lugar.
+        </p>
+      </div>
+
+      <div class="grid-cards-solucao">
+        <!-- Card 1 -->
+        <div class="card-solucao">
+          <div class="card-solucao__topo">
+            <div class="card-solucao__icone">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                <line x1="2" y1="10" x2="22" y2="10"></line>
+              </svg>
+            </div>
+            <span class="card-solucao__badge">Automação</span>
+          </div>
+          <h3 class="card-solucao__titulo">Gestão de Recebíveis & Cobranças</h3>
+          <p class="card-solucao__texto">
+            Emissão rápida de cobranças via Pix e boleto com lembretes automáticos de vencimento, acompanhamento em
+            tempo
+            real e conciliação bancária automática.
+          </p>
+          <ul class="card-solucao__lista">
+            <li>Emissão em lote ou individual</li>
+            <li>Lembretes automáticos por WhatsApp/E-mail</li>
+            <li>Baixa instantânea de recebimentos</li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-solucao">
+          <div class="card-solucao__topo">
+            <div class="card-solucao__icone">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <span class="card-solucao__badge">Previsibilidade</span>
+          </div>
+          <h3 class="card-solucao__titulo">Controle Ativo da Inadimplência</h3>
+          <p class="card-solucao__texto">
+            Identificação imediata de valores em aberto, visão clara da curva de inadimplência e ferramentas para
+            acordos rápidos e preservação do relacionamento.
+          </p>
+          <ul class="card-solucao__lista">
+            <li>Histórico por associado ou cooperado</li>
+            <li>Evolução temporal dos recebíveis</li>
+            <li>Projeção clara de fluxo de caixa</li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-solucao">
+          <div class="card-solucao__topo">
+            <div class="card-solucao__icone">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </div>
+            <span class="card-solucao__badge">Confiança</span>
+          </div>
+          <h3 class="card-solucao__titulo">Transparência & Prestação de Contas</h3>
+          <p class="card-solucao__texto">
+            Ambiente dedicado para prestação de contas, permitindo que associados e cooperados consultem suas
+            contribuições com total clareza e credibilidade.
+          </p>
+          <ul class="card-solucao__lista">
+            <li>Portal do associado amigável</li>
+            <li>Relatórios gerenciais exportáveis</li>
+            <li>Auditoria simplificada para assembleias</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     3. SEÇÃO DIFERENCIAL: A KOTASPAY VAI ALÉM DA COBRANÇA (STEPPER)
+     ========================================================================= -->
+<section class="secao-diferencial" id="diferencial">
+  <div class="container">
+    <div class="secao-cabecalho">
+      <span class="tag-secao tag-secao--neutra">Evolução da Solução</span>
+      <h2 class="secao-titulo">A KotasPay vai além da simples cobrança</h2>
+      <p class="secao-subtitulo">
+        Muito mais do que emitir boletos: uma solução completa de inteligência financeira pensada para a governança de
+        organizações coletivas.
+      </p>
+    </div>
+
+    <!-- Stepper Visual com Cores Progressivas -->
+    <div class="stepper-horizontal">
+      <div class="stepper-item stepper-item--etapa1">
+        <div class="stepper-indicador">
+          <span class="stepper-num">1</span>
+        </div>
+        <div class="stepper-conteudo">
+          <strong class="stepper-titulo">COBRAR</strong>
+          <span class="stepper-desc">Cobrança multicanal via Pix, boleto e cartão</span>
+        </div>
+      </div>
+
+      <div class="stepper-conector">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </div>
+
+      <div class="stepper-item stepper-item--etapa2">
+        <div class="stepper-indicador">
+          <span class="stepper-num">2</span>
+        </div>
+        <div class="stepper-conteudo">
+          <strong class="stepper-titulo">CONTROLAR</strong>
+          <span class="stepper-desc">Conciliação automática e gestão da inadimplência</span>
+        </div>
+      </div>
+
+      <div class="stepper-conector">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </div>
+
+      <div class="stepper-item stepper-item--etapa3">
+        <div class="stepper-indicador">
+          <span class="stepper-num">3</span>
+        </div>
+        <div class="stepper-conteudo">
+          <strong class="stepper-titulo">PREVER</strong>
+          <span class="stepper-desc">Previsibilidade de receitas e fluxo de caixa</span>
+        </div>
+      </div>
+
+      <div class="stepper-conector">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </div>
+
+      <div class="stepper-item stepper-item--etapa4">
+        <div class="stepper-indicador">
+          <span class="stepper-num">4</span>
+        </div>
+        <div class="stepper-conteudo">
+          <strong class="stepper-titulo">DECIDIR</strong>
+          <span class="stepper-desc">Relatórios gerenciais e embasamento para assembleias</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Destaque de Inteligência Financeira -->
+    <div class="card-inteligencia">
+      <div class="card-inteligencia__grid">
+        <div class="card-inteligencia__item">
+          <div class="card-inteligencia__numero">100%</div>
+          <div class="card-inteligencia__texto">Visibilidade de receitas previstas, recebidas e pendentes em tempo real.
+          </div>
+        </div>
+        <div class="card-inteligencia__item">
+          <div class="card-inteligencia__numero">0</div>
+          <div class="card-inteligencia__texto">Dependência de planilhas manuais ou conferência visual de extratos.
+          </div>
+        </div>
+        <div class="card-inteligencia__item">
+          <div class="card-inteligencia__numero">Central</div>
+          <div class="card-inteligencia__texto">Todas as informações financeiras em um só lugar, simplificando
+            auditorias.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     4. SEÇÃO PÚBLICOS-ALVO & TRANSPARÊNCIA (ABAS / TABS)
+     ========================================================================= -->
+<section class="secao-publicos" id="publicos-alvo">
+  <div class="container">
+    <div class="secao-cabecalho">
+      <span class="tag-secao tag-secao--solucao">Para Quem É</span>
+      <h2 class="secao-titulo">Soluções adaptadas a cada modelo de organização</h2>
+      <p class="secao-subtitulo">
+        Desenvolvida para atender as particularidades de presidentes, diretores, tesoureiros e dos próprios associados e
+        cooperados.
+      </p>
+    </div>
+
+    <!-- Navegação de Abas (Tabs) -->
+    <div class="tabs-navegacao" role="tablist" aria-label="Segmentos de público">
+      <button class="tab-btn tab-btn--ativo" id="tab-btn-associacoes" role="tab" aria-selected="true"
+        aria-controls="tab-painel-associacoes" data-target="tab-painel-associacoes">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        Para Associações
+      </button>
+
+      <button class="tab-btn" id="tab-btn-cooperativas" role="tab" aria-selected="false"
+        aria-controls="tab-painel-cooperativas" data-target="tab-painel-cooperativas">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        Para Cooperativas
+      </button>
+
+      <button class="tab-btn" id="tab-btn-membros" role="tab" aria-selected="false" aria-controls="tab-painel-membros"
+        data-target="tab-painel-membros">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+          <line x1="12" y1="18" x2="12.01" y2="18"></line>
+        </svg>
+        Para Associados & Cooperados
+      </button>
+    </div>
+
+    <!-- Conteúdo das Abas -->
+    <div class="tabs-conteudo">
+      <!-- Painel 1: Associações -->
+      <div class="tab-painel tab-painel--ativo" id="tab-painel-associacoes" role="tabpanel"
+        aria-labelledby="tab-btn-associacoes">
+        <div class="tab-card">
+          <div class="tab-card__info">
+            <span class="tab-card__tag">Gestão Comunitária & Profissional</span>
+            <h3 class="tab-card__titulo">Controle claro e amigável sobre mensalidades e contribuições</h3>
+            <p class="tab-card__descricao">
+              Ideal para associações de moradores, condomínios associativos e entidades de classe que precisam
+              simplificar a cobrança sem desgastar o relacionamento comunitário.
+            </p>
+            <ul class="tab-card__lista-beneficios">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Gestão simplificada de mensalidades e taxas extras de melhorias</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Lembretes preventivos e cordiais via WhatsApp e e-mail</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Prestação de contas pronta e transparente para assembleias gerais</span>
+              </li>
+            </ul>
+            <div class="tab-card__cta">
+              <a href="{% url 'nucleo:para_associacoes' %}" class="botao botao--secundario">Ver mais detalhes</a>
+            </div>
+          </div>
+          <div class="tab-card__imagem-box">
+            <img src="{% static 'img/publico_associacoes.webp' %}"
+              alt="Reunião de diretoria de associação de moradores planejando finanças" class="tab-card__imagem"
+              width="600" height="400">
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel 2: Cooperativas -->
+      <div class="tab-painel" id="tab-painel-cooperativas" role="tabpanel" aria-labelledby="tab-btn-cooperativas"
+        hidden>
+        <div class="tab-card">
+          <div class="tab-card__info">
+            <span class="tab-card__tag">Cooperativas</span>
+            <h3 class="tab-card__titulo">Previsibilidade de receita e governança financeira para cooperados</h3>
+            <p class="tab-card__descricao">
+              Atende às demandas de rateio de custos, controle de cotas-partes e projeção confiável de fluxo de caixa em
+              cooperativas de todos os portes.
+            </p>
+            <ul class="tab-card__lista-beneficios">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Acompanhamento consolidado de aportes, rateios e obrigações</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Relatórios de auditoria e controle de inadimplência em tempo real</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Foco em governança e sustentabilidade do modelo cooperativo</span>
+              </li>
+            </ul>
+            <div class="tab-card__cta">
+              <a href="{% url 'nucleo:para_cooperativas' %}" class="botao botao--secundario">Ver mais detalhes</a>
+            </div>
+          </div>
+          <div class="tab-card__imagem-box">
+            <img src="{% static 'img/publico_cooperativas.webp' %}"
+              alt="Liderança cooperativa analisando indicadores de crescimento" class="tab-card__imagem" width="600"
+              height="400">
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel 3: Associados & Cooperados -->
+      <div class="tab-painel" id="tab-painel-membros" role="tabpanel" aria-labelledby="tab-btn-membros" hidden>
+        <div class="tab-card">
+          <div class="tab-card__info">
+            <span class="tab-card__tag">Experiência do Membro</span>
+            <h3 class="tab-card__titulo">Mais transparência e autonomia para quem faz parte</h3>
+            <p class="tab-card__descricao">
+              Acesso descomplicado pelo celular: cada associado ou cooperado acompanha suas próprias contribuições,
+              consulta segundas vias de boletos e confere pendências com total clareza.
+            </p>
+            <ul class="tab-card__lista-beneficios">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Emissão instantânea de código Pix e boletos atualizados</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Histórico completo de pagamentos e comprovantes sempre à mão</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Acesso direto a relatórios e balancetes disponibilizados pela gestão</span>
+              </li>
+            </ul>
+            <div class="tab-card__cta">
+              <a href="#contato" class="botao botao--primario">Falar com a KotasPay</a>
+            </div>
+          </div>
+          <div class="tab-card__imagem-box">
+            <img src="{% static 'img/publico_associados.webp' %}"
+              alt="Associada acompanhando pagamentos e transparência no celular" class="tab-card__imagem" width="600"
+              height="400">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     5. SEÇÃO COMO FUNCIONA (JORNADA EM 5 PASSOS)
+     ========================================================================= -->
+<section class="secao-como-funciona" id="como-funciona">
+  <div class="container">
+    <div class="secao-cabecalho">
+      <span class="tag-secao tag-secao--neutra">Jornada KotasPay</span>
+      <h2 class="secao-titulo">Como funciona na prática</h2>
+      <p class="secao-subtitulo">
+        Estruturado em 5 etapas simples para organizar os recebíveis da sua organização em poucos dias.
+      </p>
+    </div>
+
+    <div class="grid-passos">
+      <!-- Passo 01 -->
+      <div class="card-passo">
+        <span class="card-passo__numero-fundo" aria-hidden="true">01</span>
+        <div class="card-passo__topo">
+          <span class="card-passo__indicador">01</span>
+          <div class="card-passo__icone">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <line x1="19" y1="8" x2="19" y2="14" />
+              <line x1="22" y1="11" x2="16" y2="11" />
+            </svg>
+          </div>
+        </div>
+        <h3 class="card-passo__titulo">Cadastre sua organização</h3>
+        <p class="card-passo__texto">
+          Configure os dados da sua associação ou cooperativa, regras de mensalidades e contas bancárias receptoras.
+        </p>
+      </div>
+
+      <!-- Passo 02 -->
+      <div class="card-passo">
+        <span class="card-passo__numero-fundo" aria-hidden="true">02</span>
+        <div class="card-passo__topo">
+          <span class="card-passo__indicador">02</span>
+          <div class="card-passo__icone">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+          </div>
+        </div>
+        <h3 class="card-passo__titulo">Organize os recebíveis</h3>
+        <p class="card-passo__texto">
+          Importe cadastros de associados/cooperados e estruture os valores, datas de vencimento e planos de cobrança.
+        </p>
+      </div>
+
+      <!-- Passo 03 -->
+      <div class="card-passo">
+        <span class="card-passo__numero-fundo" aria-hidden="true">03</span>
+        <div class="card-passo__topo">
+          <span class="card-passo__indicador">03</span>
+          <div class="card-passo__icone">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+        </div>
+        <h3 class="card-passo__titulo">Acompanhe os pagamentos</h3>
+        <p class="card-passo__texto">
+          O sistema envia cobranças e lembretes automáticos por Pix e boleto, realizando a baixa e conciliação em tempo
+          real.
+        </p>
+      </div>
+
+      <!-- Passo 04 -->
+      <div class="card-passo">
+        <span class="card-passo__numero-fundo" aria-hidden="true">04</span>
+        <div class="card-passo__topo">
+          <span class="card-passo__indicador">04</span>
+          <div class="card-passo__icone">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
+          </div>
+        </div>
+        <h3 class="card-passo__titulo">Gere relatórios automáticos</h3>
+        <p class="card-passo__texto">
+          Acesse balancetes de inadimplência, receitas realizadas vs. pendentes e relatórios prontos para prestação de
+          contas.
+        </p>
+      </div>
+
+      <!-- Passo 05 -->
+      <div class="card-passo">
+        <span class="card-passo__numero-fundo" aria-hidden="true">05</span>
+        <div class="card-passo__topo">
+          <span class="card-passo__indicador">05</span>
+          <div class="card-passo__icone">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M16 12l-4-4-4 4M12 16V8" />
+            </svg>
+          </div>
+        </div>
+        <h3 class="card-passo__titulo">Decida com previsibilidade</h3>
+        <p class="card-passo__texto">
+          Tome decisões financeiras assertivas, planeje manutenções e investimentos com total segurança do caixa futuro.
+        </p>
+      </div>
+    </div>
+
+    <div class="como-funciona__cta">
+      <a href="{% url 'nucleo:como_funciona' %}" class="botao botao--outline">Ver detalhes do fluxo completo</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     6. SEÇÃO GOVERNANÇA, ESG & SEGURANÇA (BLOCO ESCURO DE CONFIANÇA)
+     ========================================================================= -->
+<section class="secao-esg" id="seguranca">
+  <div class="container">
+    <div class="secao-cabecalho secao-cabecalho--escuro">
+      <span class="tag-secao tag-secao--menta">Confiança & Governança</span>
+      <h2 class="secao-titulo secao-titulo--claro">Seus dados merecem segurança. Sua gestão merece confiança.</h2>
+      <p class="secao-subtitulo secao-subtitulo--claro">
+        Combinamos tecnologia moderna, conformidade com a LGPD e boas práticas de integridade financeira para proteger a
+        reputação da sua organização.
+      </p>
+    </div>
+
+    <div class="grid-esg">
+      <!-- Card Governança -->
+      <div class="card-esg">
+        <div class="card-esg__icone">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#55D6A6" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <line x1="3" y1="9" x2="21" y2="9" />
+            <line x1="9" y1="21" x2="9" y2="9" />
+          </svg>
+        </div>
+        <h3 class="card-esg__titulo">Governança & Rastreabilidade</h3>
+        <p class="card-esg__texto">
+          Organização centralizada de todas as movimentações, com histórico auditável de recebíveis, conciliação
+          transparente e total suporte à prestação de contas aos conselhos fiscais.
+        </p>
+        <ul class="card-esg__lista">
+          <li>Registro imutável de transações</li>
+          <li>Facilidade em auditorias fiscais</li>
+          <li>Redução drástica de divergências</li>
+        </ul>
+      </div>
+
+      <!-- Card Segurança & LGPD -->
+      <div class="card-esg">
+        <div class="card-esg__icone">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#55D6A6" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <h3 class="card-esg__titulo">Segurança da Informação & LGPD</h3>
+        <p class="card-esg__texto">
+          Proteção rigorosa dos dados pessoais de cooperados e associados, controle criterioso de permissões por nível
+          de usuário e criptografia de ponta a ponta.
+        </p>
+        <ul class="card-esg__lista">
+          <li>Tratamento de dados em conformidade com a LGPD</li>
+          <li>Controle granular de acessos e logins</li>
+          <li>Infraestrutura em nuvem segura e protegida</li>
+        </ul>
+      </div>
+
+      <!-- Card Sustentabilidade ESG -->
+      <div class="card-esg">
+        <div class="card-esg__icone">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#55D6A6" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+          </svg>
+        </div>
+        <h3 class="card-esg__titulo">Sustentabilidade Digital (ESG)</h3>
+        <p class="card-esg__texto">
+          Digitalização ponta a ponta dos processos financeiros, eliminando o desperdício de papéis, impressões de
+          cobranças físicas e emissão de correspondências manuais.
+        </p>
+        <ul class="card-esg__lista">
+          <li>Cobranças 100% digitais via Pix e links seguros</li>
+          <li>Fortalecimento dos laços comunitários</li>
+          <li>Impacto positivo na eficiência coletiva</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     7. SEÇÃO SOBRE A KOTASPAY
+     ========================================================================= -->
+<section class="secao-sobre" id="sobre">
+  <div class="container">
+    <div class="secao-sobre__grid">
+      <div class="secao-sobre__texto-bloco">
+        <span class="tag-secao tag-secao--solucao">Sobre a KotasPay</span>
+        <h2 class="secao-titulo">Tecnologia financeira a serviço do cooperativismo e da comunidade</h2>
+        <p class="secao-sobre__p">
+          A KotasPay é uma plataforma de tecnologia voltada à gestão financeira e de recebíveis de associações,
+          cooperativas e organizações associativas. Desenvolvemos soluções para tornar processos financeiros mais
+          simples, organizados e transparentes, contribuindo para maior previsibilidade das receitas e melhores decisões
+          de gestão.
+        </p>
+        <p class="secao-sobre__assinatura">
+          <strong>Propósito:</strong> Fortalecer organizações coletivas por meio de uma gestão financeira mais
+          transparente, inteligente e sustentável.
+        </p>
+      </div>
+
+      <div class="secao-sobre__pilares">
+        <div class="pilar-card">
+          <h4 class="pilar-card__titulo">Missão</h4>
+          <p class="pilar-card__texto">
+            Simplificar e transformar a gestão de recebíveis de associações e cooperativas, utilizando tecnologia para
+            aumentar a previsibilidade financeira, reduzir a inadimplência e fortalecer a transparência.
+          </p>
+        </div>
+
+        <div class="pilar-card">
+          <h4 class="pilar-card__titulo">Visão</h4>
+          <p class="pilar-card__texto">
+            Ser referência nacional em tecnologia para gestão financeira, recebíveis e transparência de associações e
+            cooperativas.
+          </p>
+        </div>
+
+        <div class="pilar-card pilar-card--destaque">
+          <h4 class="pilar-card__titulo">Nossos Valores</h4>
+          <p class="pilar-card__texto valores-lista">
+            Transparência • Confiança • Inovação • Integridade • Colaboração • Sustentabilidade
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     8. SEÇÃO FORMULÁRIO DE CONVERSÃO / CONTATO COMERCIAL
+     ========================================================================= -->
+<section class="secao-contato" id="contato">
+  <div class="container">
+    <div class="card-conversao">
+      <div class="card-conversao__header">
+        <span class="tag-secao tag-secao--solucao">Fale com Especialistas</span>
+        <h2 class="card-conversao__titulo">Quer transformar a gestão financeira da sua organização?</h2>
+        <p class="card-conversao__subtitulo">
+          Converse com a equipe KotasPay e descubra como nossa plataforma pode ajudar sua entidade a organizar
+          recebíveis, reduzir a inadimplência e conquistar total transparência.
+        </p>
+      </div>
+
+      {% if messages %}
+      <div class="mensagens-container">
+        {% for mensagem in messages %}
+        <div class="alerta alerta--{{ mensagem.tags }}">{{ mensagem }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <form method="post" action="{% url 'captacao_leads:contato' %}" class="form-conversao">
+        {% csrf_token %}
+
+        <div class="form-conversao__grid">
+          <!-- Coluna 1: Dados Pessoais & Contato -->
+          <div class="form-conversao__coluna">
+            <div class="campo-grupo">
+              <label for="id_nome_completo" class="campo-label">Nome completo *</label>
+              <input type="text" name="nome_completo" id="id_nome_completo" class="campo-input"
+                placeholder="Ex: Carlos Eduardo" required maxlength="200">
+            </div>
+
+            <div class="campo-grupo">
+              <label for="id_email" class="campo-label">E-mail corporativo ou institucional *</label>
+              <input type="email" name="email" id="id_email" class="campo-input"
+                placeholder="seuemail@organizacao.com.br" required>
+            </div>
+
+            <div class="campo-grupo">
+              <label for="id_whatsapp" class="campo-label">WhatsApp com DDD *</label>
+              <input type="tel" name="whatsapp" id="id_whatsapp" class="campo-input" placeholder="(00) 00000-0000"
+                required maxlength="20">
+            </div>
+          </div>
+
+          <!-- Coluna 2: Dados da Organização -->
+          <div class="form-conversao__coluna">
+            <div class="campo-grupo">
+              <label for="id_nome_da_organizacao" class="campo-label">Nome da sua organização *</label>
+              <input type="text" name="nome_da_organizacao" id="id_nome_da_organizacao" class="campo-input"
+                placeholder="Ex: Associação Parque das Flores" required maxlength="200">
+            </div>
+
+            <div class="campo-grupo-duplo">
+              <div class="campo-grupo">
+                <label for="id_tipo_de_organizacao" class="campo-label">Tipo de organização *</label>
+                <select name="tipo_de_organizacao" id="id_tipo_de_organizacao" class="campo-select" required>
+                  <option value="" disabled selected>Selecione...</option>
+                  <option value="associacao_de_moradores">Associação de moradores</option>
+                  <option value="cooperativa">Cooperativa</option>
+                  <option value="associacao_profissional">Associação profissional</option>
+                  <option value="outra">Outra</option>
+                </select>
+              </div>
+
+              <div class="campo-grupo">
+                <label for="id_faixa_de_associados" class="campo-label">Nº de associados/cooperados *</label>
+                <select name="faixa_de_associados" id="id_faixa_de_associados" class="campo-select" required>
+                  <option value="" disabled selected>Selecione...</option>
+                  <option value="ate_100">Até 100</option>
+                  <option value="de_101_a_500">101 a 500</option>
+                  <option value="de_501_a_1000">501 a 1.000</option>
+                  <option value="de_1001_a_5000">1.001 a 5.000</option>
+                  <option value="mais_de_5000">Mais de 5.000</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="campo-grupo">
+              <label for="id_objetivo_do_contato" class="campo-label">Objetivo do contato *</label>
+              <select name="objetivo_do_contato" id="id_objetivo_do_contato" class="campo-select" required>
+                <option value="" disabled selected>Selecione o objetivo...</option>
+                <option value="conhecer_a_solucao">Conhecer a solução</option>
+                <option value="solicitar_demonstracao">Solicitar demonstração</option>
+                <option value="reduzir_inadimplencia">Reduzir inadimplência</option>
+                <option value="melhorar_gestao_financeira">Melhorar gestão financeira</option>
+                <option value="melhorar_transparencia">Melhorar transparência</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linha de Mensagem Opcional -->
+        <div class="campo-grupo campo-grupo--full">
+          <label for="id_mensagem" class="campo-label">Como podemos ajudar sua organização hoje? (Opcional)</label>
+          <textarea name="mensagem" id="id_mensagem" class="campo-textarea" rows="3"
+            placeholder="Compartilhe seus principais desafios com cobrança, inadimplência ou prestação de contas..."></textarea>
+        </div>
+
+        <div class="campo-grupo campo-grupo--aceite">
+          <label class="campo-checkbox" for="id_aceite_da_politica">
+            <input type="checkbox" name="aceite_da_politica" id="id_aceite_da_politica" required>
+            <span>Li e concordo com a <a href="{% url 'nucleo:politica_de_privacidade' %}" target="_blank" rel="noopener" class="campo-checkbox__link">Política de Privacidade <svg class="campo-checkbox__icone" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg><span class="sr-apenas"> (abre em nova aba)</span></a>.</span>
+          </label>
+        </div>
+
+        <div class="form-conversao__rodape">
+          <button type="submit" class="botao botao--primario botao--full botao--lg">
+            Quero falar com a KotasPay
+            <svg class="icone-seta" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <p class="form-privacidade-nota">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            Seus dados estão protegidos conforme as diretrizes da LGPD. Sem spam.
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "nucleo/documento_legal_base.html" %}
+
+{% block titulo %}LGPD e Proteção de Dados — KotasPay{% endblock %}
+{% block meta_descricao %}Como a KotasPay cumpre a LGPD e como você pode exercer seus direitos como titular de dados.{% endblock %}
+{% block titulo_do_documento %}LGPD e proteção de dados{% endblock %}
+{% block resumo_do_documento %}Como cumprimos a Lei Geral de Proteção de Dados e como você exerce seus direitos.{% endblock %}
+
+{% block corpo_do_documento %}
+{# RASCUNHO para revisão jurídica. Os trechos em <mark> são pendências a preencher ou validar. #}
+
+<p>
+  A KotasPay trata dados pessoais com transparência e responsabilidade. Esta página resume, em linguagem
+  simples, como cumprimos a Lei Geral de Proteção de Dados (Lei nº 13.709/2018, a "LGPD") e como você pode
+  exercer seus direitos. Os detalhes completos estão na
+  <a href="{% url 'nucleo:politica_de_privacidade' %}">Política de Privacidade</a>.
+</p>
+
+<h2>O que a LGPD protege</h2>
+<p>
+  A LGPD protege qualquer informação que identifique ou possa identificar uma pessoa, como nome, e-mail,
+  telefone e endereço IP. Ela exige que quem coleta esses dados explique o motivo, colete apenas o necessário e
+  proteja as informações.
+</p>
+
+<h2>Como tratamos dados neste site</h2>
+<ul>
+  <li>coletamos apenas os dados do formulário de contato, para responder à sua solicitação e preparar uma proposta;</li>
+  <li>não vendemos seus dados;</li>
+  <li>compartilhamos dados somente com quem é necessário à operação, como descrito na Política de Privacidade;</li>
+  <li>guardamos os dados apenas pelo tempo necessário.</li>
+</ul>
+
+<h2>Seus direitos como titular</h2>
+<p>
+  Você pode pedir acesso, correção, anonimização, bloqueio ou eliminação de dados, portabilidade, informação
+  sobre compartilhamento e revogação do consentimento, entre outros direitos previstos no art. 18 da LGPD.
+</p>
+
+<h2>Como exercer seus direitos</h2>
+<p>
+  Envie sua solicitação para {% include "nucleo/email_da_empresa.html" with valor=empresa.email_do_encarregado rotulo="E-MAIL DO ENCARREGADO" %},
+  informando o nome e o e-mail que você usou no contato. Podemos pedir informações adicionais para confirmar sua
+  identidade. Responderemos dentro dos prazos previstos na lei.
+</p>
+
+<h2>Segurança dos dados</h2>
+<p>
+   Adotamos medidas técnicas e administrativas para proteger os dados contra acessos não autorizados, perdas e
+  usos indevidos, como conexão HTTPS,certificados SSL,acesso restrito ao painel administrativo, backups e controle de acesso aos dados.
+  Se ocorrer um incidente de segurança que possa causar risco ou dano relevante, comunicaremos a Autoridade
+  Nacional de Proteção de Dados (ANPD) e os titulares afetados.
+</p>
+
+<h2>Plataforma KotasPay</h2>
+<p>
+  A plataforma de gestão financeira, usada por associações, cooperativas e seus membros, trata dados de forma
+  distinta deste site institucional e tem política de privacidade e termos próprios.
+ 
+</p>
+
+<h2>Encarregado (DPO)</h2>
+<p>
+  Nome: {% include "nucleo/dado_da_empresa.html" with valor=empresa.nome_do_encarregado rotulo="NOME DO ENCARREGADO" %}<br>
+  E-mail: {% include "nucleo/email_da_empresa.html" with valor=empresa.email_do_encarregado rotulo="E-MAIL DO ENCARREGADO" %}
+</p>
+
+<h2>Autoridade Nacional de Proteção de Dados</h2>
+<p>
+  Você também pode apresentar reclamações à ANPD, órgão que fiscaliza o cumprimento da LGPD:
+  <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">gov.br/anpd</a>.
+</p>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}
+  {% if segmento_do_publico == "associacao" %}Para Associações — KotasPay
+  {% else %}Para Cooperativas — KotasPay{% endif %}
+{% endblock %}
+
+{% block conteudo %}
+<section class="secao-publico-pagina" style="padding: 4.5rem 0;">
+  <div class="container">
+    <a href="{% url 'nucleo:inicio' %}" class="botao botao--outline" style="margin-bottom: 2rem;">
+      &larr; Voltar para a home
+    </a>
+    {% if segmento_do_publico == "associacao" %}
+      <div class="secao-cabecalho">
+        <span class="tag-secao tag-secao--solucao">Para Associações</span>
+        <h1 class="secao-titulo">KotasPay para Associações</h1>
+        <p class="secao-subtitulo">
+          Solução sob medida para associações de moradores, profissionais e condomínios associativos que buscam previsibilidade e relacionamento harmônico.
+        </p>
+      </div>
+
+      <div class="tab-card" style="margin-bottom: 3.5rem;">
+        <div class="tab-card__info">
+          <span class="tab-card__tag">Gestão Comunitária & Profissional</span>
+          <h2 class="tab-card__titulo">Controle claro e amigável sobre mensalidades</h2>
+          <p class="tab-card__descricao">
+            A KotasPay automatiza as cobranças de contribuições sociais, taxas condominiais e valores extraordinários, diminuindo o atrito com moradores e membros.
+          </p>
+          <ul class="tab-card__lista-beneficios">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Envio de cobranças por Pix e boletos sem taxa abusiva</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Régua automática de notificações e avisos pré-vencimento</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Relatórios em tempo real prontos para assembleias gerais</span>
+            </li>
+          </ul>
+          <div class="tab-card__cta">
+            <a href="{% url 'captacao_leads:contato' %}" class="botao botao--primario">Solicitar demonstração para associação</a>
+          </div>
+        </div>
+        <div class="tab-card__imagem-box">
+          <img src="{% static 'img/publico_associacoes.webp' %}" alt="Reunião de gestores de associação" class="tab-card__imagem" width="600" height="400">
+        </div>
+      </div>
+    {% else %}
+      <div class="secao-cabecalho">
+        <span class="tag-secao tag-secao--solucao">Para Cooperativas</span>
+        <h1 class="secao-titulo">KotasPay para Cooperativas</h1>
+        <p class="secao-subtitulo">
+          Tecnologia para cooperativas que exigem previsibilidade orçamentária, controle de rateios e máxima transparência para os cooperados.
+        </p>
+      </div>
+
+      <div class="tab-card" style="margin-bottom: 3.5rem;">
+        <div class="tab-card__info">
+          <span class="tab-card__tag">Cooperativismo Forte & Moderno</span>
+          <h2 class="tab-card__titulo">Previsibilidade de receita e governança financeira</h2>
+          <p class="tab-card__descricao">
+            Criada para suportar a complexidade do cooperativismo de crédito, trabalho, agronegócio e saúde, proporcionando controle rigoroso de recebíveis.
+          </p>
+          <ul class="tab-card__lista-beneficios">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Gestão de cotas-partes, rateio de despesas e aportes</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Previsão assertiva de caixa para planejamento de curto e longo prazo</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A36A" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Transparência total e compliance para auditorias e conselhos</span>
+            </li>
+          </ul>
+          <div class="tab-card__cta">
+            <a href="{% url 'captacao_leads:contato' %}" class="botao botao--primario">Solicitar demonstração para cooperativa</a>
+          </div>
+        </div>
+        <div class="tab-card__imagem-box">
+          <img src="{% static 'img/publico_cooperativas.webp' %}" alt="Diretoria cooperativa em reunião estratégica" class="tab-card__imagem" width="600" height="400">
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Outro segmento link + voltar para home -->
+    <div style="text-align: center; margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+      {% if segmento_do_publico == "associacao" %}
+        <p style="color: var(--kp-cinza-subtitulo); margin: 0;">Sua organização é uma cooperativa? <a href="{% url 'nucleo:para_cooperativas' %}" style="color: var(--kp-verde-esmeralda); font-weight: 600; text-decoration: underline;">Conheça a KotasPay para Cooperativas &rarr;</a></p>
+      {% else %}
+        <p style="color: var(--kp-cinza-subtitulo); margin: 0;">Sua organização é uma associação? <a href="{% url 'nucleo:para_associacoes' %}" style="color: var(--kp-verde-esmeralda); font-weight: 600; text-decoration: underline;">Conheça a KotasPay para Associações &rarr;</a></p>
+      {% endif %}
+      <p style="margin: 0;"><a href="{% url 'nucleo:inicio' %}" style="color: var(--kp-verde-esmeralda); font-weight: 600; text-decoration: underline;">&larr; Voltar para a home</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %}

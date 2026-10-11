@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}Sobre a KotasPay — Missão, Visão, Propósito e Valores{% endblock %}
+
+{% block conteudo %}
+<section class="secao-sobre-detalhes" style="padding: 4.5rem 0;">
+  <div class="container">
+    <div class="secao-cabecalho">
+      <span class="tag-secao tag-secao--solucao">Institucional</span>
+      <h1 class="secao-titulo">Sobre a KotasPay</h1>
+      <p class="secao-subtitulo">
+        Tecnologia voltada à gestão financeira e de recebíveis de associações, cooperativas e organizações associativas.
+      </p>
+    </div>
+
+    <div class="secao-sobre__grid" style="margin-bottom: 4rem;">
+      <div class="secao-sobre__texto-bloco">
+        <h2 style="font-size: 1.85rem; margin-bottom: 1.25rem; color: var(--kp-azul-marinho);">Nossa Origem e
+          Posicionamento</h2>
+        <p class="secao-sobre__p">
+          A KotasPay nasceu para resolver um problema recorrente: a complexidade desnecessária e o alto atrito na
+          arrecadação e gestão financeira de entidades coletivas.
+        </p>
+        <p class="secao-sobre__p">
+          Desenvolvemos soluções para tornar processos financeiros mais simples, organizados e transparentes,
+          contribuindo para maior previsibilidade das receitas e decisões de gestão mais seguras.
+        </p>
+        <div class="secao-sobre__assinatura" style="margin-top: 1.5rem;">
+          <strong>Propósito Maior:</strong> Fortalecer organizações coletivas por meio de uma gestão financeira mais
+          transparente, inteligente e sustentável.
+        </div>
+      </div>
+
+      <div class="secao-sobre__pilares">
+        <div class="pilar-card">
+          <h3 class="pilar-card__titulo">Missão</h3>
+          <p class="pilar-card__texto">
+            Simplificar e transformar a gestão de recebíveis de associações e cooperativas, utilizando tecnologia para
+            aumentar a previsibilidade financeira, reduzir a inadimplência e fortalecer a transparência.
+          </p>
+        </div>
+
+        <div class="pilar-card">
+          <h3 class="pilar-card__titulo">Visão</h3>
+          <p class="pilar-card__texto">
+            Ser referência nacional em tecnologia para gestão financeira, recebíveis e transparência de associações e
+            cooperativas.
+          </p>
+        </div>
+
+        <div class="pilar-card pilar-card--destaque">
+          <h3 class="pilar-card__titulo">Valores Fundamentais</h3>
+          <p class="pilar-card__texto valores-lista">
+            Transparência • Confiança • Inovação • Integridade • Colaboração • Sustentabilidade
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloco de Contato -->
+    <div class="card-inteligencia" style="text-align: center;">
+      <h2 style="color: #fff; margin-bottom: 1rem; font-size: 2rem;">Juntos, mais conquistas</h2>
+      <p style="color: rgba(255,255,255,0.85); max-width: 680px; margin: 0 auto 2rem auto; font-size: 1.05rem;">
+        Conecte-se com a KotasPay e faça parte de uma nova era na gestão financeira de associações e cooperativas.
+      </p>
+      <a href="{% url 'captacao_leads:contato' %}" class="botao botao--primario botao--lg">Falar com nossa liderança</a>
+      <p style="margin: 0; margin-top: 1rem;"><a href="{% url 'nucleo:inicio' %}"
+          style="color: var(--kp-verde-esmeralda); font-weight: 600; text-decoration: underline;">&larr; Voltar para a
+          home</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %}
