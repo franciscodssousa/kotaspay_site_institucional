@@ -22,6 +22,10 @@ from config.settings.base import *  # noqa: F401,F403
 
 DEBUG = False
 
+# Confia no cabeçalho X-Forwarded-Proto enviado pelo proxy reverso (Railway).
+# Sem isso, o Django não sabe que a conexão original é HTTPS.
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
 SECURE_SSL_REDIRECT = env.bool("SECURE_SSL_REDIRECT", default=False)
 SESSION_COOKIE_SECURE = env.bool("SESSION_COOKIE_SECURE", default=False)
 CSRF_COOKIE_SECURE = env.bool("CSRF_COOKIE_SECURE", default=False)

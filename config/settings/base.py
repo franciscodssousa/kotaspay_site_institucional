@@ -30,6 +30,12 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 
+# Origens confiáveis para requisições com proteção CSRF (ex: login do /admin).
+# Obrigatório em ambientes atrás de proxy reverso (Railway, Render, etc.).
+# Defina no ambiente: CSRF_TRUSTED_ORIGINS=https://seu-app.up.railway.app
+# Múltiplas origens podem ser separadas por vírgula.
+CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=[])
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
