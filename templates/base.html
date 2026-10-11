@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block titulo %}KotasPay — Gestão financeira simples. Receitas previsíveis para sua organização.{% endblock %}</title>
+  
+  <meta name="description" content="{% block meta_descricao %}A plataforma digital completa para gestão de recebíveis, controle de inadimplência e transparência em associações e cooperativas.{% endblock %}">
+  <meta name="theme-color" content="#0B1F33">
+
+  <!-- Favicon e App Icons Oficiais KotasPay -->
+  <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon.png' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+
+  <!-- Google Fonts: Montserrat (Títulos/Marca) & Inter (Interface/Leitura) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Folhas de Estilo -->
+  <link rel="stylesheet" href="{% static 'css/variaveis.css' %}">
+  <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+  {% block estilos_extras %}{% endblock %}
+</head>
+<body>
+  {% include "includes/cabecalho.html" %}
+
+  <main id="conteudo-principal">
+    {% block conteudo %}{% endblock %}
+  </main>
+
+  {% include "includes/rodape.html" %}
+
+  <script src="{% static 'js/principal.js' %}" defer></script>
+  {% block scripts_extras %}{% endblock %}
+</body>
+</html>

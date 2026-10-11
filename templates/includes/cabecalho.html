@@ -1,0 +1,51 @@
+{% load static %}
+<header class="cabecalho" id="cabecalho-principal">
+  <div class="cabecalho__container">
+    <a class="cabecalho__logo-link" href="{% url 'nucleo:inicio' %}" aria-label="KotasPay — Página Inicial">
+      <img src="{% static 'img/logo_header_kotaspay.jpg' %}" alt="KotasPay" class="cabecalho__logo-img" width="180"
+        height="38">
+    </a>
+
+    <!-- Botão de Menu Mobile -->
+    <button class="cabecalho__toggle-mobile" id="btn-menu-mobile" type="button" aria-label="Abrir menu de navegação"
+      aria-expanded="false" aria-controls="menu-navegacao">
+      <span class="linha-hamburguer"></span>
+      <span class="linha-hamburguer"></span>
+      <span class="linha-hamburguer"></span>
+    </button>
+
+    <!-- Navegação Principal -->
+    <nav class="cabecalho__navegacao" id="menu-navegacao">
+      <ul class="cabecalho__links">
+        <li><a href="{% url 'nucleo:inicio' %}" class="cabecalho__link">Início</a></li>
+        <li><a href="{% url 'nucleo:solucao' %}" class="cabecalho__link">Solução</a></li>
+        <li><a href="{% url 'nucleo:inicio' %}?aba=associacoes#publicos-alvo" class="cabecalho__link">Para
+            Associações</a></li>
+        <li><a href="{% url 'nucleo:inicio' %}?aba=cooperativas#publicos-alvo" class="cabecalho__link">Para
+            Cooperativas</a></li>
+        <li><a href="{% url 'nucleo:como_funciona' %}" class="cabecalho__link">Como Funciona</a></li>
+        <li><a href="{% url 'nucleo:sobre' %}" class="cabecalho__link">Sobre a KotasPay</a></li>
+        <li><a href="{% url 'captacao_leads:contato' %}" class="cabecalho__link">Contato</a></li>
+      </ul>
+
+      <div class="cabecalho__acoes">
+        <!-- Botão Ghost/Outline neutro reservado para a plataforma -->
+        <a class="botao botao--outline" href="{% url 'captacao_leads:contato' %}"
+          title="Acesso antecipado à plataforma">
+          <svg class="icone-btn" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          Acessar plataforma
+        </a>
+        <!-- CTA Primário Verde Esmeralda
+        <a class="botao botao--primario" href="{% url 'captacao_leads:contato' %}">
+          Quero conhecer
+        </a>
+
+         -->
+      </div>
+    </nav>
+  </div>
+</header>

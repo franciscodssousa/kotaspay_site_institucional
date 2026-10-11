@@ -1,0 +1,54 @@
+:root {
+  /* Paleta Principal KotasPay - Manual de Identidade Visual */
+  --kp-azul-marinho: #0B1F33;
+  --kp-azul-petroleo: #123F52;
+  --kp-verde-esmeralda: #16A36A;
+  --kp-verde-hover: #128556;
+  --kp-verde-menta: #55D6A6;
+  --kp-cinza-chumbo: #3E454B;
+  --kp-branco: #FFFFFF;
+
+  /* Superfícies, Fundos e Tons Neutros */
+  --kp-cinza-suave: #F8FAFC;
+  --kp-cinza-medio: #EDF2F7;
+  --kp-borda: #E2E8F0;
+  --kp-cinza-claro: #A0AEC0;
+  --kp-cinza-subtitulo: #4A5568;
+
+  /* Tons de Destaque Semânticos */
+  --kp-verde-fundo: #F0FDF4;
+  --kp-verde-borda: #BBF7D0;
+  --kp-alerta-fundo: #FFFBEB;
+  --kp-alerta-borda: #FDE68A;
+  --kp-alerta-icone: #D97706;
+  --kp-perigo-fundo: #FEF2F2;
+  --kp-perigo-borda: #FECACA;
+  --kp-perigo-texto: #DC2626;
+
+  /* Tipografia Moderna */
+  --font-titulo: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-corpo: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Sombras e Elevações SaaS */
+  --sombra-sm: 0 1px 3px rgba(11, 31, 51, 0.06), 0 1px 2px rgba(11, 31, 51, 0.04);
+  --sombra-card: 0 4px 12px rgba(11, 31, 51, 0.05), 0 1px 3px rgba(11, 31, 51, 0.04);
+  --sombra-hover: 0 16px 32px rgba(11, 31, 51, 0.1), 0 6px 12px rgba(11, 31, 51, 0.05);
+  --sombra-destaque: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --sombra-flutuante: 0 25px 50px -12px rgba(11, 31, 51, 0.18);
+
+  /* Raios de Borda */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transições Suaves */
+  --transicao-rapida: 0.18s ease;
+  --transicao-suave: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Containers e Layout */
+  --container-max-width: 1200px;
+  --espacamento-secao: 5.5rem;
+  --espacamento-secao-mobile: 3.5rem;
+}

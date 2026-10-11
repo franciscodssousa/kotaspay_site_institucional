@@ -1,0 +1,49 @@
+services:
+  db:
+    image: postgres:18-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-kotaspay_hml}
+      POSTGRES_USER: ${POSTGRES_USER:-kotaspay}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-kotaspay_hml}
+    volumes:
+      - ./docker_volumes/postgres:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-kotaspay} -d ${POSTGRES_DB:-kotaspay_hml}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.homologacao
+      DATABASE_URL: postgres://${POSTGRES_USER:-kotaspay}:${POSTGRES_PASSWORD:-kotaspay_hml}@db:5432/${POSTGRES_DB:-kotaspay_hml}
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      SECRET_KEY: ${SECRET_KEY}
+      DEBUG: "False"
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS:-localhost,127.0.0.1}
+      DJANGO_SUPERUSER_USERNAME: ${DJANGO_SUPERUSER_USERNAME:-admin}
+      DJANGO_SUPERUSER_EMAIL: ${DJANGO_SUPERUSER_EMAIL:-admin@kotaspay.com}
+      DJANGO_SUPERUSER_PASSWORD: ${DJANGO_SUPERUSER_PASSWORD:-admin123}
+      SECURE_SSL_REDIRECT: ${SECURE_SSL_REDIRECT:-False}
+      SESSION_COOKIE_SECURE: ${SESSION_COOKIE_SECURE:-False}
+      CSRF_COOKIE_SECURE: ${CSRF_COOKIE_SECURE:-False}
+      SECURE_HSTS_SECONDS: ${SECURE_HSTS_SECONDS:-0}
+      SECURE_HSTS_INCLUDE_SUBDOMAINS: ${SECURE_HSTS_INCLUDE_SUBDOMAINS:-False}
+      EMAIL_REMETENTE_PADRAO: ${EMAIL_REMETENTE_PADRAO:-contato@kotaspay.com}
+      EMAIL_COMERCIAL_KOTASPAY: ${EMAIL_COMERCIAL_KOTASPAY:-comercial@kotaspay.com}
+      EMAIL_HOST: ${EMAIL_HOST}
+      EMAIL_PORT: ${EMAIL_PORT:-587}
+      EMAIL_HOST_USER: ${EMAIL_HOST_USER}
+      EMAIL_HOST_PASSWORD: ${EMAIL_HOST_PASSWORD}
+      HABILITAR_ENVIO_EMAIL: ${HABILITAR_ENVIO_EMAIL:-True}
+      HABILITAR_REGISTRO_BANCO: ${HABILITAR_REGISTRO_BANCO:-True}
+      URL_BASE_PLATAFORMA_ASSOCIACOES: ${URL_BASE_PLATAFORMA_ASSOCIACOES:-}
+    ports:
+      - "8000:8000"
